@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>منصة الحجوزات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>منصة الحجوزات</h1>
+    <nav>
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#events">الفعاليات</a></li>
+        <li><a href="#booking">الحجز</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- قسم الفعاليات -->
+    <section class="events" id="events">
+      <h2>الفعاليات القادمة</h2>
+      <div class="event">
+        <h3>فعالية 1</h3>
+        <p>وصف مختصر للفعالية.</p>
+        <button onclick="openBookingModal('فعالية 1')">احجز الآن</button>
+      </div>
+      <div class="event">
+        <h3>فعالية 2</h3>
+        <p>وصف مختصر للفعالية.</p>
+        <button onclick="openBookingModal('فعالية 2')">احجز الآن</button>
+      </div>
+      <!-- أضف فعاليات أخرى حسب الحاجة -->
+    </section>
+
+    <!-- قسم الحجز -->
+    <section class="booking" id="booking">
+      <h2>نموذج الحجز</h2>
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <label for="name">الاسم الكامل:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" required>
+
+        <label for="eventName">اسم الفعالية:</label>
+        <input type="text" id="eventName" required>
+
+        <label for="date">تاريخ الحجز:</label>
+        <input type="date" id="date" required>
+
+        <button type="submit">إرسال الحجز</button>
+      </form>
+    </section>
+
+    <!-- نافذة منبثقة للحجز -->
+    <div class="modal" id="bookingModal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBookingModal()">&times;</span>
+        <p>احجز مكانك في <span id="selectedEvent"></span></p>
+        <button onclick="scrollToBookingForm()">انتقل إلى نموذج الحجز</button>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <p>© 2025 منصة الحجوزات. جميع الحقوق محفوظة.</p>
+    <p>البريد الإلكتروني: <a href="mailto:info@bookingplatform.com">info@bookingplatform.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
